@@ -1,4 +1,4 @@
-import os
+import os,requests
 
 from flask import Flask,jsonify,request
 from flask_sqlalchemy import SQLAlchemy
@@ -51,6 +51,25 @@ def add_city():
     db.session.commit()
 
     return weather_schema.jsonify(new_city)
+
+#update weather data from API
+@app.route('/weather',methods=['POST'])
+def update_weather_data(): 
+    city = request.json['name']
+
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=1dbaf7baf220c461d9be1a59aebba09a'
+    
+    r = requests.get(url.format(city)).json()
+    
+    print(r)
+
+    new_weather=Weather.query.filter_by(name=city)
+    new_weather.name=city
+    new_weather.temp=r['main']['temp']
+    new_weather.description=r['weather'][0]['description']
+    db.session.commit()
+
+    return weather_schema.jsonify(new_weather)
 
 #Get all weather data
 @app.route('/weather', methods=['GET'])
