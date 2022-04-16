@@ -9,9 +9,11 @@ This CRUD is based on the tutorial, it has:
  - PUT: /products/<id> to modify a product
  - DELETE: /products/<id> to delete a product
  
- Product has
+ Product looks like:
+ ```
       {
         "id": number,
         "name": "name",
         "description": "description"
     }
+ ```
