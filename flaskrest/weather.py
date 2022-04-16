@@ -50,6 +50,8 @@ def add_city():
     db.session.add(new_city)
     db.session.commit()
 
+    update_weather_data()
+
     return weather_schema.jsonify(new_city)
 
 #update weather data from API
