@@ -21,8 +21,8 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
 
-import flaskrest.product
-import flaskrest.weather
+import flaskrest.product  # noqa
+import flaskrest.weather  # noqa
 
 
 @app.route('/')

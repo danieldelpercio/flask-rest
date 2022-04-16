@@ -59,7 +59,10 @@ def add_city():
 def update_weather_data():
     city = request.json['name']
 
-    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=1dbaf7baf220c461d9be1a59aebba09a'
+    url = ("https://api.openweathermap.org"
+           "/data/2.5/weather?q={}&units=metric"
+           "&appid=1dbaf7baf220c461d9be1a59aebba09a"
+           )
 
     r = requests.get(url.format(city)).json()
 
