@@ -63,7 +63,7 @@ def update_weather_data():
     
     print(r)
 
-    new_weather=Weather.query.filter_by(name=city)
+    new_weather=Weather.query.filter_by(name=city).first()
     new_weather.name=city
     new_weather.temp=r['main']['temp']
     new_weather.description=r['weather'][0]['description']
