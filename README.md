@@ -1,5 +1,5 @@
 # flask-rest
-An app to experiment with a REST API in flask.
+An app to experiment with a REST API in flask. I built an API to add cities and update their current weather based on a response from the openweather API. Future goals for the project could be creating historical data for these queries and perhaps create metrics based on historical data - average temp etc. Also a good opportunity to work with swagger. 
 
 To run:
 ## CMD
