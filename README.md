@@ -1,7 +1,17 @@
 # flask-rest
 An app to experiment with a REST API in flask.
 
-
+To run:
+## CMD
+```
+set FLASK_APP=flask-rest
+flask run
+```
+## bash
+```
+export FLASK_APP=flask-rest
+flask run
+```
 # Product CRUD
 This CRUD is based on a tutorial. It is here for reference purposes.
 The API is:
